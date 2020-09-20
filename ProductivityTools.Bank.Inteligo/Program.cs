@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ProductivityTools.Bank.Inteligo
+namespace ProductivityTools.Bank.Inteligo.Runner
 {
     class Program
     {
