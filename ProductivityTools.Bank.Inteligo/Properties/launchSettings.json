@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ProductivityTools.Bank.Inteligo.Runner": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "MasterConfiguration"
+      }
+    }
+  }
+}
