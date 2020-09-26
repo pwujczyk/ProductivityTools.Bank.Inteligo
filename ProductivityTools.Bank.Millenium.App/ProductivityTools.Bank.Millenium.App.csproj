@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="ProductivityTools.BankAccounts.Contract" Version="0.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ProductivityTools.Bank.Millenium.Selenium\ProductivityTools.Bank.Millenium.Selenium.csproj" />
   </ItemGroup>
 

@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using ProductivityTools.BankAccounts.Contract;
 using System;
 using System.Net.Sockets;
 using System.Threading;
@@ -36,6 +37,26 @@ namespace ProductivityTools.Bank.Millenium.Selenium
             passwordControl.SendKeys(password);
             var loginButtonControl = this.Chrome.FindElement(By.ClassName("button-login"));
             loginButtonControl.Click();
+        }
+
+
+        public BasicData GetBasicData()
+        {
+            var accountTable=this.Chrome.FindElement(By.ClassName("AccountsTable"));
+            var rows = accountTable.FindElements(By.ClassName("row_even"));
+            foreach(var row in rows)
+            {
+                BasicData basicData = new BasicData();
+                
+                var x = row.FindElements(By.TagName("TD"));
+                string accountName = x[0].Text;
+                string availiablefunds = x[1].Text;
+                string saldo = x[2].Text;
+
+                basicData.AvailiableFunds = decimal.Parse(availiablefunds);
+                basicData.Saldo = decimal.Parse(saldo);
+            }
+            throw new NotImplementedException();
         }
     }
 }
