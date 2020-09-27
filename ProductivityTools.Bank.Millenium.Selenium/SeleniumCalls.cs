@@ -55,6 +55,10 @@ namespace ProductivityTools.Bank.Millenium.Selenium
 
                 basicData.AvailiableFunds = decimal.Parse(availiablefunds);
                 basicData.Saldo = decimal.Parse(saldo);
+                basicData.BlockedFunds = basicData.Saldo - basicData.AvailiableFunds;
+                basicData.Bank = "Inteligo";
+                basicData.Account = accountName.Split('\n')[0].Trim();
+                
             }
             throw new NotImplementedException();
         }
