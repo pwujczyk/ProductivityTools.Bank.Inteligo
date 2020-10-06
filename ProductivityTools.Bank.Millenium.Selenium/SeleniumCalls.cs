@@ -2,6 +2,8 @@
 using OpenQA.Selenium.Chrome;
 using ProductivityTools.BankAccounts.Contract;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.Sockets;
 using System.Threading;
 
@@ -40,14 +42,20 @@ namespace ProductivityTools.Bank.Millenium.Selenium
         }
 
 
-        public BasicData GetBasicData()
+        public List<BasicData> GetBasicData()
         {
+            var result = new List<BasicData>();
             var accountTable=this.Chrome.FindElement(By.ClassName("AccountsTable"));
-            var rows = accountTable.FindElements(By.ClassName("row_even"));
-            foreach(var row in rows)
+            var rowseven = accountTable.FindElements(By.ClassName("row_even"));
+            var rowsodd = accountTable.FindElements(By.ClassName("row_odd"));
+
+            var allRows = rowseven.Concat(rowsodd);
+
+            foreach (var row in allRows)
             {
                 BasicData basicData = new BasicData();
-                
+                result.Add(basicData);
+
                 var x = row.FindElements(By.TagName("TD"));
                 string accountName = x[0].Text;
                 string availiablefunds = x[1].Text;
@@ -57,10 +65,10 @@ namespace ProductivityTools.Bank.Millenium.Selenium
                 basicData.Saldo = decimal.Parse(saldo);
                 basicData.BlockedFunds = basicData.Saldo - basicData.AvailiableFunds;
                 basicData.Bank = "Inteligo";
-                basicData.Account = accountName.Split('\n')[0].Trim();
-                
+                basicData.Account = accountName.Split('\n')[0].Trim();               
             }
-            throw new NotImplementedException();
+
+            return result;
         }
     }
 }

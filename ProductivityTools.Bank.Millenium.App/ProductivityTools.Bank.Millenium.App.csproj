@@ -5,10 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ProductivityTools.BankAccounts.Contract" Version="0.0.5" />
+    <PackageReference Include="ProductivityTools.BankAccounts.Contract" Version="0.0.6" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ProductivityTools.Bank.Inteligo.Caller\ProductivityTools.Bank.Inteligo.Caller.csproj" />
     <ProjectReference Include="..\ProductivityTools.Bank.Millenium.Selenium\ProductivityTools.Bank.Millenium.Selenium.csproj" />
   </ItemGroup>
 

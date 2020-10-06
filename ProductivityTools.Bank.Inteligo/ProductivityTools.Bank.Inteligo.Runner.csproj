@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ProductivityTools.Bank.Inteligo.Caller\ProductivityTools.Bank.Inteligo.Caller.csproj" />
     <ProjectReference Include="..\ProductivityTools.Bank.Millenium.App\ProductivityTools.Bank.Millenium.App.csproj" />
     <ProjectReference Include="..\ProductivityTools.Bank.Millenium.Selenium\ProductivityTools.Bank.Millenium.Selenium.csproj" />
   </ItemGroup>

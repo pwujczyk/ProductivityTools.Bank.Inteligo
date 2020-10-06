@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ProductivityTools.Bank.Inteligo.Caller;
 using ProductivityTools.Bank.Millenium.App.Runner;
 using ProductivityTools.Bank.Millenium.Selenium;
 using ProductivityTools.MasterConfiguration;
@@ -29,6 +30,7 @@ namespace ProductivityTools.Bank.Inteligo.Runner
             var serviceProvider = new ServiceCollection()
                 .AddSingleton<InteligoApplication>()
                 .AddSingleton<SeleniumCalls>()
+                .AddSingleton<HttpCaller>()
                 .BuildServiceProvider();
             var application = serviceProvider.GetService<InteligoApplication>();
 
