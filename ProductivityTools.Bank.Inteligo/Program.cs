@@ -21,7 +21,7 @@ namespace ProductivityTools.Bank.Inteligo.Runner
                 throw new ArgumentNullException("Environment not found in ASPNETCORE_ENVIRONMENT");
 
             IConfigurationRoot configuration = new ConfigurationBuilder()
-                .AddMasterConfiguration()
+                .AddMasterConfiguration(force:true)
                 .Build();
 
             var login = configuration["login"];

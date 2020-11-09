@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.Bank.Inteligo.Runner", "ProductivityTools.Bank.Inteligo\ProductivityTools.Bank.Inteligo.Runner.csproj", "{5435ACED-1557-43A9-A276-0B330F915FB2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductivityTools.Bank.Inteligo.Runner", "ProductivityTools.Bank.Inteligo\ProductivityTools.Bank.Inteligo.Runner.csproj", "{5435ACED-1557-43A9-A276-0B330F915FB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.Bank.Millenium.App", "ProductivityTools.Bank.Millenium.App\ProductivityTools.Bank.Millenium.App.csproj", "{22B2AD30-3854-4D93-845E-22A2E9D8EB9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductivityTools.Bank.Millenium.App", "ProductivityTools.Bank.Millenium.App\ProductivityTools.Bank.Millenium.App.csproj", "{22B2AD30-3854-4D93-845E-22A2E9D8EB9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.Bank.Millenium.Selenium", "ProductivityTools.Bank.Millenium.Selenium\ProductivityTools.Bank.Millenium.Selenium.csproj", "{2FE7C228-F017-406D-AD13-0F86EC909AEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductivityTools.Bank.Millenium.Selenium", "ProductivityTools.Bank.Millenium.Selenium\ProductivityTools.Bank.Millenium.Selenium.csproj", "{2FE7C228-F017-406D-AD13-0F86EC909AEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.Bank.Inteligo.Caller", "ProductivityTools.Bank.Inteligo.Caller\ProductivityTools.Bank.Inteligo.Caller.csproj", "{BA41B8FF-1E5B-4648-9F0D-C387154D95E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductivityTools.Bank.Inteligo.Caller", "ProductivityTools.Bank.Inteligo.Caller\ProductivityTools.Bank.Inteligo.Caller.csproj", "{BA41B8FF-1E5B-4648-9F0D-C387154D95E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.Bank.Inteligo.Cmdlet", "ProductivityTools.Bank.Inteligo.Cmdlet\ProductivityTools.Bank.Inteligo.Cmdlet.csproj", "{AA4AF01A-3755-4308-A788-F900A9321AF4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{BA41B8FF-1E5B-4648-9F0D-C387154D95E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA41B8FF-1E5B-4648-9F0D-C387154D95E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA41B8FF-1E5B-4648-9F0D-C387154D95E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA4AF01A-3755-4308-A788-F900A9321AF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA4AF01A-3755-4308-A788-F900A9321AF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA4AF01A-3755-4308-A788-F900A9321AF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA4AF01A-3755-4308-A788-F900A9321AF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
