@@ -17,6 +17,10 @@ namespace ProductivityTools.Bank.Millenium.App.Runner
             this.Caller = httpCaller;
         }
 
+        public void Login(string login, string password)
+        {
+            Selenium.Login(login, password);
+        }
 
         public async void Run(string login, string password)
         {
