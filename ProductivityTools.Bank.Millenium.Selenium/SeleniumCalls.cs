@@ -27,14 +27,8 @@ namespace ProductivityTools.Bank.Millenium.Selenium
             this.Chrome.Url = Addresses.LoginPage;
 
             var loginBox=this.Chrome.FindElement(By.ClassName("field_row-client_id_field"));
-            Console.WriteLine("Login");
-            Console.WriteLine(loginBox);
             var loginControl = loginBox.FindElement(By.TagName("input"));
-            Console.WriteLine("Login found");
             Thread.Sleep(2000);
-            var x = loginControl.GetAttribute("innerHTML");
-            var x1 = loginControl.GetAttribute("outerHTML");
-            Console.WriteLine(x1);
             loginControl.SendKeys(login);
             var dalejControl = this.Chrome.FindElement(By.ClassName("button-dalej"));
             dalejControl.Click();
