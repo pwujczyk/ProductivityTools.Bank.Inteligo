@@ -3,6 +3,7 @@ using ProductivityTools.Bank.Millenium.Selenium;
 using ProductivityTools.BankAccounts.Contract;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ProductivityTools.Bank.Millenium.App.Runner
 {
@@ -22,7 +23,7 @@ namespace ProductivityTools.Bank.Millenium.App.Runner
             Selenium.Login(login, password);
         }
 
-        public async void GetBasicData(string login, string password)
+        public async Task<List<BasicData>> GetBasicData(string login, string password)
         {
             Selenium.Login(login, password);
             List<BasicData> basicDataList = this.Selenium.GetBasicData();
@@ -30,6 +31,8 @@ namespace ProductivityTools.Bank.Millenium.App.Runner
             {
                 await this.Caller.SaveBasicData(basicData);
             }
+            Selenium.CloseBrowser();
+            return basicDataList;
         }
     }
 }

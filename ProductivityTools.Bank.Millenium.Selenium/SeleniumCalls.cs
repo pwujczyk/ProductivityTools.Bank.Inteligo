@@ -22,6 +22,11 @@ namespace ProductivityTools.Bank.Millenium.Selenium
             this.Chrome = new ChromeDriver(options);
         }
 
+        public void CloseBrowser()
+        {
+            this.Chrome.Close();
+        }
+
         public void Login(string login, string password)
         {
             this.Chrome.Url = Addresses.LoginPage;
