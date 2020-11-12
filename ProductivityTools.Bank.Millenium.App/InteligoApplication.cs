@@ -22,7 +22,7 @@ namespace ProductivityTools.Bank.Millenium.App.Runner
             Selenium.Login(login, password);
         }
 
-        public async void Run(string login, string password)
+        public async void GetBasicData(string login, string password)
         {
             Selenium.Login(login, password);
             List<BasicData> basicDataList = this.Selenium.GetBasicData();

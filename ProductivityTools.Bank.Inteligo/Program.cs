@@ -34,7 +34,7 @@ namespace ProductivityTools.Bank.Inteligo.Runner
                 .BuildServiceProvider();
             var application = serviceProvider.GetService<InteligoApplication>();
 
-            application.Run(login, password);
+            application.GetBasicData(login, password);
             Console.ReadLine();
         }
     }

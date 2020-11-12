@@ -10,7 +10,7 @@ using System.Text;
 
 namespace ProductivityTools.Bank.Inteligo.Cmdlet.LoginToInteligo.Commands
 {
-    class Login : PSCmdlet.PSCommandPT<LoginToInteligoCmdlet>
+    class Login : InteligoCommandBase<LoginToInteligoCmdlet>
     {
         public Login(LoginToInteligoCmdlet cmdletType) : base(cmdletType)
         {
@@ -20,28 +20,7 @@ namespace ProductivityTools.Bank.Inteligo.Cmdlet.LoginToInteligo.Commands
 
         protected override void Invoke()
         {
-            Console.WriteLine("Hello World!");
-
-            string environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
-
-            if (String.IsNullOrWhiteSpace(environment))
-                throw new ArgumentNullException("Environment not found in ASPNETCORE_ENVIRONMENT");
-
-            IConfigurationRoot configuration = new ConfigurationBuilder()
-                .AddMasterConfiguration(force: true)
-                .Build();
-
-            var login = configuration["login"];
-            var password = configuration["password"];
-
-            var serviceProvider = new ServiceCollection()
-                .AddSingleton<InteligoApplication>()
-                .AddSingleton<SeleniumCalls>()
-                .AddSingleton<HttpCaller>()
-                .BuildServiceProvider();
-            var application = serviceProvider.GetService<InteligoApplication>();
-
-            application.Login(login, password);
+            this.InteligoApplication.Login(Login, Password);
         }
     }
 }
