@@ -7,6 +7,10 @@ namespace ProductivityTools.Bank.Inteligo.Cmdlet.LoginToInteligo
     [Cmdlet("Login", "ToInteligo")]
     public class LoginToInteligoCmdlet : PSCmdlet.PSCmdletPT
     {
+        [Parameter]
+        public SwitchParameter ShowBrowser { get; set; }
+
+
         public LoginToInteligoCmdlet()
         {
         }

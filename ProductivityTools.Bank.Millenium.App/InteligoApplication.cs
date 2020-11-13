@@ -18,18 +18,20 @@ namespace ProductivityTools.Bank.Millenium.App.Runner
             this.Caller = httpCaller;
         }
 
-        public void Login(string login, string password)
+        public void Login(string login, string password,bool showBrowser)
         {
+            Selenium.Init(showBrowser);
             Selenium.Login(login, password);
         }
 
-        public async Task<List<BasicData>> GetBasicData(string login, string password)
+        public List<BasicData> GetBasicData(string login, string password, bool showBrowser)
         {
+            Selenium.Init(showBrowser);
             Selenium.Login(login, password);
             List<BasicData> basicDataList = this.Selenium.GetBasicData();
             foreach (var basicData in basicDataList)
             {
-                await this.Caller.SaveBasicData(basicData);
+                this.Caller.SaveBasicData(basicData);
             }
             Selenium.CloseBrowser();
             return basicDataList;

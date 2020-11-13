@@ -20,7 +20,7 @@ namespace ProductivityTools.Bank.Inteligo.Cmdlet.LoginToInteligo.Commands
 
         protected override void Invoke()
         {
-            this.InteligoApplication.Login(Login, Password);
+            this.InteligoApplication.Login(Login, Password,this.Cmdlet.ShowBrowser);
         }
     }
 }

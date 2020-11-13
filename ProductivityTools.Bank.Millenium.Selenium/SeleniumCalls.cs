@@ -16,10 +16,19 @@ namespace ProductivityTools.Bank.Millenium.Selenium
         public SeleniumCalls()
         {
             var assemblydlllocation = System.Reflection.Assembly.GetExecutingAssembly().Location;
-            var assemblylocation=System.IO.Path.GetDirectoryName(assemblydlllocation);
+            var assemblylocation = System.IO.Path.GetDirectoryName(assemblydlllocation);
+        }
+
+        public void Init(bool showbrowser)
+        {
             ChromeOptions options = new ChromeOptions();
-           // options.BinaryLocation = System.IO.Path.Join(assemblylocation, "chromedriver.exe");
+            if (showbrowser == false)
+            {
+                options.AddArgument("headless");
+            }
+            // options.BinaryLocation = System.IO.Path.Join(assemblylocation, "chromedriver.exe");
             this.Chrome = new ChromeDriver(options);
+    
         }
 
         public void CloseBrowser()
@@ -31,7 +40,7 @@ namespace ProductivityTools.Bank.Millenium.Selenium
         {
             this.Chrome.Url = Addresses.LoginPage;
 
-            var loginBox=this.Chrome.FindElement(By.ClassName("field_row-client_id_field"));
+            var loginBox = this.Chrome.FindElement(By.ClassName("field_row-client_id_field"));
             var loginControl = loginBox.FindElement(By.TagName("input"));
             Thread.Sleep(2000);
             loginControl.SendKeys(login);
@@ -50,7 +59,7 @@ namespace ProductivityTools.Bank.Millenium.Selenium
         public List<BasicData> GetBasicData()
         {
             var result = new List<BasicData>();
-            var accountTable=this.Chrome.FindElement(By.ClassName("AccountsTable"));
+            var accountTable = this.Chrome.FindElement(By.ClassName("AccountsTable"));
             var rowseven = accountTable.FindElements(By.ClassName("row_even"));
             var rowsodd = accountTable.FindElements(By.ClassName("row_odd"));
 
@@ -70,7 +79,7 @@ namespace ProductivityTools.Bank.Millenium.Selenium
                 basicData.Saldo = decimal.Parse(saldo);
                 basicData.BlockedFunds = basicData.Saldo - basicData.AvailiableFunds;
                 basicData.Bank = "Inteligo";
-                basicData.Account = accountName.Split('\n')[0].Trim();               
+                basicData.Account = accountName.Split('\n')[0].Trim();
             }
 
             return result;

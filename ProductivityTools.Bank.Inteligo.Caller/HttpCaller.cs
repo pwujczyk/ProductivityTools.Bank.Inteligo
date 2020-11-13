@@ -16,9 +16,9 @@ namespace ProductivityTools.Bank.Inteligo.Caller
             client.SetBaseUrl("https://localhost:9208");
         }
 
-        public async Task SaveBasicData(BasicData basicData)
+        public void SaveBasicData(BasicData basicData)
         {
-            var result1 = await client.PostAsync<object>(EndpointNames.AccountControllerName, EndpointNames.BasicDataMethodName, basicData);
+            var result1 = client.PostAsync<object>(EndpointNames.AccountControllerName, EndpointNames.BasicDataMethodName, basicData);
         }
 
     }

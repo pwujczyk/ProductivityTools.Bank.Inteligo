@@ -13,9 +13,9 @@ namespace ProductivityTools.Bank.Inteligo.Cmdlet.GetBasicData.Commands
 
         protected override bool Condition => true;
 
-        protected override async void Invoke()
+        protected override void Invoke()
         {
-            var basicdata= await this.InteligoApplication.GetBasicData(this.Login, this.Password);
+            var basicdata= this.InteligoApplication.GetBasicData(this.Login, this.Password,this.Cmdlet.ShowBrowser);
             Console.WriteLine();
             foreach(var data in basicdata)
             {

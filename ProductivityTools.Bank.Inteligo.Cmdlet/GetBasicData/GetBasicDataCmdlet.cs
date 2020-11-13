@@ -9,6 +9,9 @@ namespace ProductivityTools.Bank.Inteligo.Cmdlet.GetBasicData
     [Cmdlet(VerbsCommon.Get, "InteligoBasicData")]
     public class GetBasicDataCmdlet : PSCmdlet.PSCmdletPT
     {
+        [Parameter]
+        public SwitchParameter ShowBrowser { get; set; }
+
         public GetBasicDataCmdlet()
         {
         }
