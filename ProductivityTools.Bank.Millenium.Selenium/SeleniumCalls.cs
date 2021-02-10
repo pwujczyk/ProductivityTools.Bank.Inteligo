@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Interactions;
 using ProductivityTools.BankAccounts.Contract;
 using System;
 using System.Collections.Generic;
@@ -59,14 +60,21 @@ namespace ProductivityTools.Bank.Millenium.Selenium
         public List<BasicData> GetBasicData()
         {
             var result = new List<BasicData>();
-            var accountTable = this.Chrome.FindElement(By.ClassName("AccountsTable"));
+            var accountTable = this.Chrome.FindElement(By.ClassName("scrolled_window"));
             var rowseven = accountTable.FindElements(By.ClassName("row_even"));
             var rowsodd = accountTable.FindElements(By.ClassName("row_odd"));
 
             var allRows = rowseven.Concat(rowsodd);
 
+            Actions actions = new Actions(this.Chrome);
+          
+
             foreach (var row in allRows)
             {
+
+                actions.MoveToElement(row);
+                actions.Perform();
+
                 BasicData basicData = new BasicData();
                 result.Add(basicData);
 
