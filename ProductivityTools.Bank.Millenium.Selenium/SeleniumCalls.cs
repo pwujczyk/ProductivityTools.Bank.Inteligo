@@ -54,6 +54,9 @@ namespace ProductivityTools.Bank.Millenium.Selenium
             passwordControl.SendKeys(password);
             var loginButtonControl = this.Chrome.FindElement(By.ClassName("button-login"));
             loginButtonControl.Click();
+
+            var additionalSecureWindow = this.Chrome.FindElement(By.ClassName("button_enter"));
+            additionalSecureWindow.Click();
         }
 
 
