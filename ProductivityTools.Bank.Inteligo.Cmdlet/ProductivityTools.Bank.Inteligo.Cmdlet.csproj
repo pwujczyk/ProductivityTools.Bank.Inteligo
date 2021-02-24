@@ -25,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ProductivityTools.Bank.Millenium.App\ProductivityTools.Bank.Millenium.App.csproj" />
+    <ProjectReference Include="..\ProductivityTools.Bank.Millenium.App\ProductivityTools.Bank.Inteligo.App.csproj" />
   </ItemGroup>
 
   <ItemGroup>
